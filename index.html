@@ -17,6 +17,16 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
     <script type="text/javascript" src="javascripts/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/cycle.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.cropped_pics').cycle({
+                fx:    'fade',
+                speed:  500
+            });
+        });
+    </script>
 
     <title>Android Developer</title>
 </head>
@@ -46,7 +56,11 @@
         <hr/>
         <div class="row-fluid">
             <div class="span4">
-                <img src="imgs/androcoins_dash_crop.png"/>
+                <div class="cropped_pics">
+                    <img src="imgs/androcoins_dash_crop.png"/>
+                    <img src="imgs/androcoins_new_expence_crop.png"/>
+                    <img src="imgs/androcoins_today_report_crop.png"/>
+                </div>
             </div>
             <div class="span8">
                 <p class="lead"><h3>Карманные расходы под контролем. Всегда.</h3>
@@ -80,7 +94,7 @@
                         </div>
                         <div class="span4"></div>
                         <div class="span4">
-                            <a class="btn btn-primary btn-large" style="float: right;">Узнать больше &raquo;</a>
+                            <a class="btn btn-primary btn-large" style="float: right;" href="projects/androcoins.html">Узнать больше &raquo;</a>
                         </div>
                     </div>
                 </p>
