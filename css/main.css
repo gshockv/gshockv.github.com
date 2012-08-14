@@ -1,0 +1,29 @@
+
+.container h1 a {
+    color: inherit;
+}
+
+.project-title {
+    color: #336699;
+}
+
+.thumbnail-without-border {
+    display: block;
+    padding: 4px;
+    line-height: 1;
+}
+
+a.thumbnail-without-border:hover {
+    border-color: #0088cc;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+
+.thumbnail-without-border > img {
+    display: block;
+    max-width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+

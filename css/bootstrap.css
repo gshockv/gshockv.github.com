@@ -4497,7 +4497,7 @@ a.thumbnail:hover {
 
 .thumbnail > img {
   display: block;
-  max-width: 100%;
+  max-width: 50%;
   margin-right: auto;
   margin-left: auto;
 }

@@ -1,46 +1,99 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset='utf-8'/>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+        <meta name="description" content="vitaly gashock android projects"/>
 
-<head>
-    <meta charset='utf-8'/>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
-    <meta name="description" content="vitaly gashock android projects"/>
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <title>Android Developer - Projects</title>
+    </head>
 
-    <title>Android Developer - Projects</title>
-</head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
 
-<body>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
+                    <a class="brand" href="/">Vitaly Gashock</a>
 
-            <a class="brand" href="/">Vitaly Gashock</a>
+                    <div class="nav-collapse pull-left">
+                        <ul class="nav" style="font-size: 12pt;">
+                            <li><a href="/">Главная</a></li>
+                            <li class="active"><a href="projects.html">Проекты</a></li>
+                        </ul>
+                    </div>
 
-            <div class="nav-collapse pull-left">
-                <ul class="nav" style="font-size: 12pt;">
-                    <li><a href="/">Главная</a></li>
-                    <li class="active"><a href="projects.html">Проекты</a></li>
-                </ul>
-            </div>
-
-            <div class="nav-collapse pull-right">
-                <ul class="nav" style="font-size: 12pt;">
-                    <li><a href="about.html">Обо мне</a></li>
-                </ul>
+                    <div class="nav-collapse pull-right">
+                        <ul class="nav" style="font-size: 12pt;">
+                            <li><a href="about.html">Обо мне</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span3">
+                    <a class="thumbnail" href="#androcoins">
+                        <img src="imgs/androcoins_dash_big.png" alt="AndroCoins Dashboard" />
+                    </a>
+                </div>
+                <div class="span8">
+                    <h1><a href="#androcoins">AndroCoins</a></h1>
+                    <hr/>
+                    <p class="lead" style="font-size: 12pt;">Простое приложение ведения учета потраченных карманных средств.
+                    Имеет понятный и удобный интерфейс пользователя. Позволяет катологизировать расходы по категориям.
+                    Просмотр отчетов за различные временные периоды и многое другое.</p>
 
-</body>
+                    <a href="http://play.google.com/store/apps/details?id=org.androcoins"
+                       target="_blank">
+                        <img alt="Android app on Google Play"
+                             src="http://www.android.com/images/brand/android_app_on_play_logo_small.png" />
+                    </a>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+            <!-- AndroCoins project description -->
+            <div>
+                <h1 id="androcoins" >Проект <strong>AndroCoins</strong></h1>
+                <hr style="border: solid 2px #eee;"/>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <a class="thumbnail-without-border" href="">
+                            <img src="imgs/androcoins_dash_big.png" alt="AndroCoins Dashboard" />
+                        </a>
+                    </div>
+                    <div class="span8">
+                        <h3>Стартовый экран (Dashboard)</h3>
+                        <hr/>
+                        <blockquote>
+                            <ul>
+                                <br/>
+                                <li>Отображение суммы расходов, потраченных сегодня</li>
+                                <li>Предоставляет быстрый доступ к основным функциям приложения</li>
+                                <li>Быстрое создание нового расхода</li>
+                                <li>Переход на экран редактирования сегодняшних расходов</li>
+                                <li>Выбор нужного типа отчета</li>
+                                <li>Доступ к системным настройкам приложения</li>
+                                <br/>
+                            </ul>
+
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
 </html>
