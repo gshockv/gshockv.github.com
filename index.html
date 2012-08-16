@@ -18,12 +18,17 @@
 
         <script type="text/javascript" src="javascripts/jquery-1.8.0.min.js"></script>
         <script type="text/javascript" src="javascripts/cycle.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrap-carousel.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrap-transition.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.cropped_pics').cycle({
                     fx:    'fade',
                     speed:  500
+                });
+                $(".projectsCarousel").carousel({
+                    interval: 1000
                 });
             });
         </script>
@@ -58,50 +63,73 @@
         <div class="container">
 
             <div class="hero-unit">
-                <h1 style="color:#336699;">AndroCoins</h1>
-                <hr/>
-                <div class="row-fluid">
-                    <div class="span4">
-                        <div class="cropped_pics">
-                            <img src="imgs/a_dash_crop.png"/>
-                            <img src="imgs/a_exp_crop.png"/>
-                            <img src="imgs/a_today_rep_crop.png"/>
-                        </div>
-                    </div>
-                    <div class="span8">
-                        <p class="lead"><h3>Карманные расходы под контролем. Всегда.</h3>
-                            <br/>
-                            <ul>
-                                <li><strong>Простой и понятный интерфейс пользователя</strong></li>
-                                <li><strong>Быстрый доступ к основным функциям со стартового экрана</strong></li>
-                                <li><strong>Возможность редактирования введенных расходов</strong></li>
-                                <li><strong>Настраиваемый список категорий расходов</strong></li>
-                                <li><strong>Построение отчетов о расходах</strong></li>
-                            </ul>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
+                <!-- projects carousel -->
+                <div id="projectsCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <!-- 500px project banner -->
+                        <div class="active item">
+                            <h1 style="color:#336699;">500px HD - Coming soon...</h1>
+                            <hr/>
                             <div class="row-fluid">
-                                <div class="span4">
-                                    <p>
-                                    <a href="http://play.google.com/store/apps/details?id=org.androcoins"
-                                            target="_blank">
-                                        <img alt="Android app on Google Play"
-                                             src="http://www.android.com/images/brand/android_app_on_play_logo_small.png" />
-                                    </a>
-                                    </p>
-                                </div>
-                                <div class="span4"></div>
-                                <div class="span4">
-                                    <a class="btn btn-primary btn-large" style="float: right;" href="projects.html#androcoins">Узнать больше &raquo;</a>
+                                <div class="span12" style="text-align: center;">
+                                    <img src="imgs/500px_stream.png" alt="500px HD" />
                                 </div>
                             </div>
-                        </p>
+                        </div>
+                        <!-- AndroCoins project banner -->
+                        <div class="item">
+                            <h1 style="color:#336699;">AndroCoins</h1>
+                            <hr/>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="span6">
+                                        <div class="cropped_pics">
+                                            <img src="imgs/a_dash_crop.png"/>
+                                            <img src="imgs/a_exp_crop.png"/>
+                                            <img src="imgs/a_today_rep_crop.png"/>
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <p><h3>Карманные расходы под контролем. Всегда.</h3>
+                                        <br/>
+                                        <ul>
+                                            <li><strong>Простой и понятный интерфейс пользователя</strong></li>
+                                            <li><strong>Быстрый доступ к основным функциям со стартового экрана</strong></li>
+                                            <li><strong>Возможность редактирования введенных расходов</strong></li>
+                                            <li><strong>Настраиваемый список категорий расходов</strong></li>
+                                            <li><strong>Построение отчетов о расходах</strong></li>
+                                        </ul>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <div class="row-fluid">
+                                            <div class="span6">
+                                                <p>
+                                                    <a href="http://play.google.com/store/apps/details?id=org.androcoins"
+                                                       target="_blank">
+                                                        <img alt="Android app on Google Play"
+                                                             src="http://www.android.com/images/brand/android_app_on_play_logo_small.png" />
+                                                    </a>
+                                                </p>
+                                            </div>
+                                            <div class="span6">
+                                                <a class="btn btn-primary btn-large" style="float: right;" href="projects.html#androcoins">Узнать больше &raquo;</a>
+                                            </div>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+                    <!-- navigation -->
+                    <a class="carousel-control left" href="#projectsCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#projectsCarousel" data-slide="next">&rsaquo;</a>
                 </div>
                 <br/>
             </div>

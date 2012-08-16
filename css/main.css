@@ -7,6 +7,10 @@
     color: #336699;
 }
 
+.cropped_pics {
+    margin-left: 80px;
+}
+
 .thumbnail-without-border {
     display: block;
     padding: 4px;
