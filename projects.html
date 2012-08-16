@@ -7,6 +7,10 @@
 
         <link href="css/main.css" rel="stylesheet">
         <link href="css/bootstrap.css" rel="stylesheet">
+
+        <script type="text/javascript" src="javascripts/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrap-modal.js"></script>
+
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -70,13 +74,21 @@
                 <hr style="border: solid 2px #eee;"/>
                 <div class="row-fluid">
                     <div class="span3">
-                        <a class="thumbnail-without-border" href="">
+                        <a class="thumbnail-without-border" data-toggle="modal" data-target="#dashboardModal" href="#dashboardModal">
                             <img src="imgs/androcoins_dash.png" alt="AndroCoins Dashboard" />
                         </a>
+                        <div class="modal hide" id="dashboardModal">
+                            <div class="modal-header">
+                                <h3>Стартовый экран (Dashboard)</h3>
+                            </div>
+                            <div class="modal-body">
+                                <img style="width: 70%;" src="imgs/androcoins_dash.png" alt="AndroCoins Dashboard" />
+                            </div>
+                        </div>
                     </div>
                     <div class="span8">
                         <h3>Стартовый экран (Dashboard)</h3>
-                        <hr/>
+                       <br/>
                         <blockquote>
                             <ul>
                                 <br/>
