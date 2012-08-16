@@ -14,16 +14,20 @@
 }
 
 a.thumbnail-without-border:hover {
-    border-color: #0088cc;
+    /*border-color: #0088cc;
     -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
     -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);*/
 }
 
 .thumbnail-without-border > img {
     display: block;
-    max-width: 50%;
+    max-width: 70%;
     margin-right: auto;
     margin-left: auto;
+}
+
+.project-carousel {
+    background: #f0f0f0;
 }
 

@@ -9,7 +9,7 @@
         <link href="css/bootstrap.css" rel="stylesheet">
 
         <script type="text/javascript" src="javascripts/jquery-1.8.0.min.js"></script>
-        <script type="text/javascript" src="javascripts/bootstrap-modal.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrap-carousel.js"></script>
 
         <style type="text/css">
             body {
@@ -20,6 +20,14 @@
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
         <title>Android Developer - Projects</title>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".androcoinsCarousel").carousel({
+                    interval: 500;
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -45,30 +53,71 @@
             </div>
         </div>
         <div class="container">
-            <div class="row-fluid">
-                <div class="span3">
-                    <a class="thumbnail" href="#androcoins">
-                        <img src="imgs/androcoins_dash.png" alt="AndroCoins Dashboard" />
-                    </a>
+            <!-- AndroCoins project block -->
+            <div id="androcoins">
+                <!-- project header -->
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h1 style="color: #336699;">AndroCoins</h1>
+                    </div>
+                    <div class="span6">
+                        <a href="http://play.google.com/store/apps/details?id=org.androcoins"
+                           target="_blank" style="float: right;">
+                            <img alt="Android app on Google Play"
+                                 src="http://www.android.com/images/brand/android_app_on_play_logo_small.png" />
+                        </a>
+                    </div>
                 </div>
-                <div class="span8">
-                    <h1><a href="#androcoins">AndroCoins</a></h1>
-                    <hr/>
-                    <p class="lead" style="font-size: 12pt;">Простое приложение ведения учета потраченных карманных средств.
-                    Имеет понятный и удобный интерфейс пользователя. Позволяет катологизировать расходы по категориям.
-                    Просмотр отчетов за различные временные периоды и многое другое.</p>
-
-                    <a href="http://play.google.com/store/apps/details?id=org.androcoins"
-                       target="_blank">
-                        <img alt="Android app on Google Play"
-                             src="http://www.android.com/images/brand/android_app_on_play_logo_small.png" />
-                    </a>
+                <hr/>
+                <!-- project carousel -->
+                <div id="androcoinsCarousel" class="carousel slide project-carousel">
+                    <!-- items -->
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <a class="thumbnail-without-border" href="#">
+                                        <img src="imgs/androcoins_dash.png" alt="AndroCoins Dashboard" />
+                                    </a>
+                                </div>
+                                <div class="span4">
+                                    <a class="thumbnail-without-border" href="#">
+                                        <img src="imgs/androcoins_reports.png" alt="AndroCoins Dashboard" />
+                                    </a>
+                                </div>
+                                <div class="span4">
+                                    <a class="thumbnail-without-border" href="#">
+                                        <img src="imgs/androcoins_dash_settings.png" alt="AndroCoins Dashboard" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>Стартовый экран (Dashboard)</h4>
+                                <br/>
+                                <p>Отображение расходов за текущий день.
+                                Быстрый доступ к основным функциям и настройкам приложения</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <a class="thumbnail-without-border" href="#">
+                                        <img src="imgs/androcoins_new_expence.png" alt="AndroCoins New Expence" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- navigation -->
+                    <a class="carousel-control left" href="#androcoinsCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#androcoinsCarousel" data-slide="next">&rsaquo;</a>
                 </div>
             </div>
 
-            <br/>
-            <br/>
+
+
             <!-- AndroCoins project description -->
+            <!--
             <div>
                 <h1 id="androcoins" >Проект <strong>AndroCoins</strong></h1>
                 <hr style="border: solid 2px #eee;"/>
@@ -105,7 +154,7 @@
                     </div>
                 </div>
             </div>
-
+            -->
         </div>
     </body>
 </html>
