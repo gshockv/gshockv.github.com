@@ -5,7 +5,7 @@ var webSiteApp = angular.module("webSiteApp", []);
 webSiteApp.config(function($routeProvider) {
 	$routeProvider.
 		when('/', {
-			controller: 'MainController',
+			controller: 'HomeController',
 			templateUrl: 'home.html'
 		}).
 		when('/projects', {

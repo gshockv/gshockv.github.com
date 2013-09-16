@@ -6,11 +6,11 @@
         <link rel="stylesheet" href="app/css/bootstrap.min.css">
         <link rel="stylesheet" href="app/css/main.css">
     </head>
-    <body ng-controller="MainController">
+    <body>
         
         <div class="container">
             <div class="header">
-                <ul class="nav nav-pills pull-right">
+                <ul class="nav nav-pills pull-right" ng-controller="NavController">
                     <li ng-class="{active: routeIs('/')}"><a href="#/">Главная</a></li>
                     <li ng-class="{active: routeIs('/projects')}"><a href="#/projects">Проекты</a></li>
                     <li ng-class="{active: routeIs('/blog')}"><a href="#/blog">Блог</a></li>
@@ -24,7 +24,8 @@
 
         <script type="text/javascript" src="app/lib/angular.min.js"></script>
         <script type="text/javascript" src="app/js/app.js"></script>
-        <script type="text/javascript" src="app/js/controllers/MainController.js"></script>
+        <script type="text/javascript" src="app/js/controllers/NavController.js"></script>
+        <script type="text/javascript" src="app/js/controllers/HomeController.js"></script>
         <script type="text/javascript" src="app/js/controllers/ProjectsController.js"></script>
         <script type="text/javascript" src="app/js/controllers/BlogController.js"></script>
         <script type="text/javascript" src="app/js/controllers/AboutController.js"></script>
