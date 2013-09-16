@@ -6,18 +6,18 @@ webSiteApp.config(function($routeProvider) {
 	$routeProvider.
 		when('/', {
 			controller: 'HomeController',
-			templateUrl: 'home.html'
+			templateUrl: 'app/home.html'
 		}).
 		when('/projects', {
 			controller: 'ProjectsController',
-			templateUrl: 'projects.html'
+			templateUrl: 'app/projects.html'
 		}).
 		when('/blog', {
 			controller: 'BlogController',
-			templateUrl: 'blog.html'
+			templateUrl: 'app/blog.html'
 		}).
 		when('/about', {
 			controller: 'AboutController',
-			templateUrl: 'about.html'
+			templateUrl: 'app/about.html'
 		});
 });
