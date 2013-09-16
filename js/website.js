@@ -1,13 +1,23 @@
-angular.module("website", [])
-	.config(function($routeProvider) {
-		$routeProvider
-			.when('/', {template: 'partials/home.html'})
-			.when('/projects', {template: 'partials/projects.html'})
-			.when('/blog', {template: 'partials/blog.html'})
-			.when('/about', {template: 'partials/about.html'})
-			.otherwise({reditectTo: '/', template: '/partials/home.html'})
+'use strict';
+
+var webSiteApp = angular.module("webSiteApp", []);
+
+webSiteApp.config(function($routeProvider) {
+		$routeProvider.
+			when('/', {
+				templateUrl: 'views/home.html'
+			}).
+			when('/projects', {
+				templateUrl: 'views/projects.html'
+			}).
+			when('/blog', {
+				templateUrl: 'views/blog.html'
+			}).
+			when('/about', {
+				templateUrl: 'views/about.html'
+			});
 	});
-;
+
 
 function MainCtrl($scope) {
 
