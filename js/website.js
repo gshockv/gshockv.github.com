@@ -5,16 +5,16 @@ var webSiteApp = angular.module("webSiteApp", []);
 webSiteApp.config(function($routeProvider) {
 		$routeProvider.
 			when('/', {
-				templateUrl: 'views/home.html'
+				templateUrl: 'home.html'
 			}).
 			when('/projects', {
-				templateUrl: 'views/projects.html'
+				templateUrl: 'projects.html'
 			}).
 			when('/blog', {
-				templateUrl: 'views/blog.html'
+				templateUrl: 'blog.html'
 			}).
 			when('/about', {
-				templateUrl: 'views/about.html'
+				templateUrl: 'about.html'
 			});
 	});
 
