@@ -1,8 +1,8 @@
 'use strict';
 
 webSiteApp.controller('NavController', 
-	function MavController($scope, $location) {
-		$scope.routIs = function(routeName) {
+	function NavController($scope, $location) {
+		$scope.routeIs = function(routeName) {
 			return $location.path() === routeName;
 		};
 	}

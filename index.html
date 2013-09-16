@@ -9,8 +9,8 @@
     <body>
         
         <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right" ng-controller="NavController">
+            <div class="header" ng-controller="NavController">
+                <ul class="nav nav-pills pull-right">
                     <li ng-class="{active: routeIs('/')}"><a href="#/">Главная</a></li>
                     <li ng-class="{active: routeIs('/projects')}"><a href="#/projects">Проекты</a></li>
                     <li ng-class="{active: routeIs('/blog')}"><a href="#/blog">Блог</a></li>
