@@ -1,1 +1,1 @@
-Github Page for gshockv.github.com account
+Github Page for gshockv.github.com

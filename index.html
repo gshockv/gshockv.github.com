@@ -1,140 +1,27 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-
+<!doctype html>
+<html ng-app="website">
     <head>
-        <meta charset='utf-8'/>
-        <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
-        <meta name="description" content="vitaly gashock android projects"/>
+        <title>gshockv@gmail.com</title>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/website.js"></script>
 
-        <link href="css/main.css" rel="stylesheet">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
-        <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
-        <script type="text/javascript" src="javascripts/jquery-1.8.0.min.js"></script>
-        <script type="text/javascript" src="javascripts/cycle.js"></script>
-        <script type="text/javascript" src="javascripts/bootstrap-carousel.js"></script>
-        <script type="text/javascript" src="javascripts/bootstrap-transition.js"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('.cropped_pics').cycle({
-                    fx:    'fade',
-                    speed:  200
-                });
-                $(".projectsCarousel").carousel({
-                    interval: 2000
-                });
-            });
-        </script>
-
-        <title>Android Developer</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
-
-    <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-
-                    <a class="brand" href="/">Vitaly Gashock</a>
-
-                    <div class="nav-collapse pull-left">
-                        <ul class="nav" style="font-size: 12pt;">
-                            <li class="active"><a href="/">Главная</a></li>
-                            <li><a href="projects.html">Проекты</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="nav-collapse pull-right">
-                        <ul class="nav" style="font-size: 12pt;">
-                            <li><a href="https://plus.google.com/u/0/115957464425093610158/about" target="_blank">Обо мне</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+    <body ng-controller="MainCtrl">
+        
         <div class="container">
-
-            <div class="hero-unit">
-                <!-- projects carousel -->
-                <div id="projectsCarousel" class="carousel slide">
-                    <div class="carousel-inner">
-                        <!-- 500px project banner -->
-                        <div class="active item">
-                            <h1 style="color:#336699;">500px HD - Coming soon...</h1>
-                            <hr/>
-                            <div class="row-fluid">
-                                <div class="span12" style="text-align: center;">
-                                    <img src="imgs/500px_stream.png" alt="500px HD" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- AndroCoins project banner -->
-                        <div class="item">
-                            <h1 style="color:#336699;">AndroCoins</h1>
-                            <hr/>
-                            <div class="row-fluid">
-                                    <div class="span6">
-                                        <div class="cropped_pics">
-                                            <img src="imgs/a_appmenu_crop.png"/>
-                                            <img src="imgs/a_report_crop.png"/>
-                                        </div>
-                                    </div>
-                                    <div class="span6">
-                                        <p><h3>Карманные расходы под контролем. Всегда.</h3>
-                                        <br/>
-                                        <ul>
-                                            <li><strong>Простой и понятный интерфейс пользователя</strong></li>
-                                            <li><strong>Быстрый доступ к основным функциям из основного меню</strong></li>
-                                            <li><strong>Возможность редактирования введенных расходов</strong></li>
-                                            <li><strong>Настраиваемый список категорий расходов</strong></li>
-                                            <li><strong>Построение отчетов о расходах</strong></li>
-                                        </ul>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <div class="row-fluid">
-                                            <div class="span6">
-                                                <p>
-                                                    <a href="http://play.google.com/store/apps/details?id=org.androcoins"
-                                                       target="_blank">
-                                                        <img alt="Android app on Google Play"
-                                                             src="http://www.android.com/images/brand/android_app_on_play_logo_small.png" />
-                                                    </a>
-                                                </p>
-                                            </div>
-                                            <div class="span6">
-                                                <a class="btn btn-primary btn-large" style="float: right;" href="projects.html#androcoins">Узнать больше &raquo;</a>
-                                            </div>
-                                        </div>
-                                        </p>
-                                    </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- navigation -->
-                    <a class="carousel-control left" href="#projectsCarousel" data-slide="prev">&lsaquo;</a>
-                    <a class="carousel-control right" href="#projectsCarousel" data-slide="next">&rsaquo;</a>
-                </div>
-                <br/>
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="#">Главная</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#blog">Блог</a></li>
+                    <li><a href="#about">Обо мне</a></li>
+                </ul>
+                <h3 class="text-muted">Vitaly Gashock</h3>
             </div>
-            <hr>
-            <footer>
-                <p>&copy; Vitaly Gashock 2012</p>
-            </footer>
+
+            <div ng-view></div>
         </div>
     </body>
 </html>
