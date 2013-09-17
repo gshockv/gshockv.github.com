@@ -4,7 +4,6 @@ body {
 }
 
 .header,
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -37,21 +36,10 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
+.container .jumbotron {
   border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+  padding: 25px 0 25px 0;
+  font-size: 14pt;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -71,6 +59,36 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* Home page styles */
+.promo-big-img {
+  width: 269px;
+  height: 349px;
+}
+
+.promo-desc {
+  padding-left: 32px;
+  padding-right: 48px;
+}
+
+.promo-desc .title {
+  color: #0099cc;
+}
+
+.promo-desc .promo-hr {
+  background: #ddd;
+  height: 1px;
+}
+
+.promo-buttons {
+  margin-top: 150px;
+  text-align: right;
+}
+
+.promo-buttons button {
+  height: 44px;
+  margin-left: 10px;
 }
 
 /* About page related styles */
