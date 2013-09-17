@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="webSiteApp">
+    <head>
+        <meta charset='utf-8'/>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+        <meta name="description" content="vitaly gashock personal website"/>
+
+        <title>gshockv@gmail.com</title>
+
+        <link rel="stylesheet" href="app/css/bootstrap.min.css">
+        <link rel="stylesheet" href="app/css/main.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="header" ng-controller="NavController">
+                <ul class="nav nav-pills pull-right">
+                    <li ng-class="{active: routeIs('/')}"><a href="#/">Главная</a></li>
+                    <li ng-class="{active: routeIs('/projects')}"><a href="#/projects">Проекты</a></li>
+                    <li ng-class="{active: routeIs('/blog')}"><a href="#/blog">Блог</a></li>
+                    <li ng-class="{active: routeIs('/about')}"><a href="#/about">Обо мне</a></li>
+                </ul>
+                <h4 class="text-muted">Vitaly Gashock</h4>
+            </div>
+
+            <ng-view></ng-view>
+        </div>
+
+        <script type="text/javascript" src="app/lib/angular.min.js"></script>
+        <script type="text/javascript" src="app/js/app.js"></script>
+        <script type="text/javascript" src="app/js/controllers/NavController.js"></script>
+        <script type="text/javascript" src="app/js/controllers/HomeController.js"></script>
+        <script type="text/javascript" src="app/js/controllers/ProjectsController.js"></script>
+        <script type="text/javascript" src="app/js/controllers/BlogController.js"></script>
+        <script type="text/javascript" src="app/js/controllers/AboutController.js"></script>
+
+    </body>
+</html>
