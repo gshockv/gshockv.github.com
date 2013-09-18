@@ -1,14 +1,14 @@
 [
 	{
-		"url" : "#/blog/first-post", 
+		"url" : "first-post", 
 		"title" : "Поцт-знакомство", 
 		"description" : "Пост-знакомство",
-		"page" : "first-post.html"
+		"page" : "app/blog-content/first-post.html"
 	},
 	{
-		"url" : "#/blog/using-gwt-rpc", 
+		"url" : "using-gwt-rpc", 
 		"title" : "Работаем с GWT RPC", 
 		"description" : "Основным коробочным механизмом общения с сервером в GWT есть RPC механизм. На примере небольшого приложения будет рассмотрено введение в данный механизм",
-		"page" : "gwt-rpc.html"
+		"page" : "app/blog-content/gwt-rpc.html"
 	}
 ]

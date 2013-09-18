@@ -13,8 +13,12 @@ webSiteApp.config(function($routeProvider) {
 			templateUrl: 'app/projects.html'
 		}).
 		when('/blog', {
-			controller: 'BlogController',
-			templateUrl: 'app/blog.html'
+			controller : 'BlogController',
+			templateUrl : 'app/blog.html'
+		}).
+		when('/blog/:postUrl', {
+			controller: 'BlogPostController',
+			templateUrl: 'app/blog-post.html'
 		}).
 		when('/about', {
 			controller: 'AboutController',
