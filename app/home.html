@@ -20,20 +20,10 @@
 	</div>
 
 	<div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Статья из бложика первая</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum <a href="#/blog">Читать</a></p>
-
-          <br/>
-          <h4>Сложно о Android</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum <a href="#/blog">Читать</a></p>
-        </div>
-
-        <div class="col-lg-6">
-          <h4>О влиянии лунного света на прорастание телеграфных столбов</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum <a href="#/blog">Читать</a></p>
-        </div>
-      </div>
-
+		<div class="col-md-6" ng-repeat="post in posts">
+			<h4>{{post.title}}</h4>
+			<p>{{post.description}} <a href="{{post.url}}">Читать&nbsp;дальше</a></p>
+		</div>
+    </div>
 </div>
 

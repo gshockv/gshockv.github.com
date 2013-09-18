@@ -1,7 +1,9 @@
 'use-strict';
 
 webSiteApp.controller('BlogController',
-	function BlogController($scope) {
+	function BlogController($scope, $http) {
+		$scope.posts = [];
 
+		
 	}
 );
