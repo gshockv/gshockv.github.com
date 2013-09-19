@@ -2,7 +2,7 @@
 	{
 		"url" : "welcoming", 
 		"title" : "Пост-знакомство", 
-		"description" : "Первый пост-знакомство",
+		"description" : "Знакомство и объяснение причин и целей создания сего ресурса",
 		"page" : "app/blog-content/first-post.html"
 	}
 ]
