@@ -1,0 +1,133 @@
+<h2>
+Общение между потоками через ResultReceiver
+</h2>
+<br/>
+Как известно каждому Android-разработчику SDK предоставляет несколько способов заставить опреденный кусок кода выполнятся в параллельном потоке. Многопоточность это хорошо, но кроме ее организации нужно также наладить канал общения между потоками. Например, между UI-потоком и потоком, в котором выполняются фоновые задачи.  В данном коротком эссе хочу осветить один из способов, основанный на применении встроенного класса ResultReceiver.<habracut />
+
+<h4>Вместо вступления</h4>
+В большинстве Android-проектов приходится организовывать общение с внешним миром, т.е. организовывать сетевое взаимодействие. Не буду повторяться почему выполнять такой долгоиграющий код в UI-потоке плохо. Это всем известно. Более того, начиная с API 11 (Honeycomb который) система бьет разработчика по рукам исключением когда тот пытается в UI-потоке делать сетевые вызовы.
+Одним из вариантов общения UI-потока с параллельным потоком (в котором, к примеру, выполняется http-запрос) есть подход, основанный на применении встроенного системного класса <code>android.os.ResultReceiver</code> совместно с сервисом.
+
+<h4>Немного о архитектуре подхода</h4>
+Для организации отдельного потока я выбрал IntentService. Почему именно он, а не простой Service? Потому, что IntentService при поступлении к нему команды автоматически начинает выполнять метод <code>onHandleIntent(Intent intent)</code> в отдельном от UI потоке. Простой Service такого не позволяет ибо он выполняется в основном потоке. Организовывать запуск потока из Service'а нужно самостоятельно.
+Общение между Activity и IntentService-ом будет происходить с помощью Intent'ов.
+
+<h4>Код</h4>
+Сначала исходный код, потом ниже краткие комментарии к тому, что там и как происходит.
+
+<h5>Реализация ResultReceiver'а</h5>
+<pre>
+public class AppResultsReceiver extends ResultReceiver {
+  public interface Receiver {
+    public void onReceiveResult(int resultCode, Bundle data);
+  }
+	
+  private Receiver mReceiver;
+	
+  public AppResultsReceiver(Handler handler) {
+    super(handler);
+  }
+	
+  public void setReceiver(Receiver receiver) {
+    mReceiver = receiver;
+  }
+
+  @Override
+  protected void onReceiveResult(int resultCode, Bundle resultData) {
+    if (mReceiver != null) {
+	  mReceiver.onReceiveResult(resultCode, resultData);
+	}
+  }
+}
+</pre>
+Здесь следует обратить внимание на коллбэк (<code>Receiver</code>). При получении результата в <code>onReceiveResult()</code> делается проверка на не-null коллбэка. Дальше в коде активити будет показано как активировать и деактивировать ресивер с помощью этого коллбэка.
+
+<h5>IntentService</h5>
+<pre>
+public class AppService extends IntentService {
+  public AppService() {
+    this("AppService");
+  }
+	
+  public AppService(String name) {
+    super(name);
+  }
+
+  @Override
+  protected void onHandleIntent(Intent intent) {
+    final ResultReceiver receiver = intent.getParcelableExtra(Constants.RECEIVER);
+	receiver.send(Constants.STATUS_RUNNING, Bundle.EMPTY);
+	final Bundle data = new Bundle();
+		
+    try {
+	  Thread.sleep(Constants.SERVICE_DELAY);
+      data.putString(Constants.RECEIVER_DATA, "Sample result data");
+    } catch (InterruptedException e) {
+      data.putString(Constants.RECEIVER_DATA, "Error");
+    }
+    receiver.send(Constants.STATUS_FINISHED, data);
+  }
+}
+</pre>
+<code>onHandleIntent()</code> будет вызван после того, как вызывающий код (UI-классы etc.) выполнит <code>startService()</code>. Инстанс ResultReceiver'а будет извлечен из интента и ему тут же будет отослана команда "ОК, я пошел трудиться". После выполнения полезной работы в этом методе результаты (извлеченные из JSON классы-модели, строки, что-угодно) помещается в бандл и отправляется ресиверу. Причем для индикации типа ответа используются разные коды (описаны константами). Как ResultReceiver получает и отправляет данные можно почитать в его исходниках.
+
+<h5>Посылка команды сервису и обработка результата (Activity)</h5>
+<pre>
+public class MainActivity extends Activity implements AppResultsReceiver.Receiver {
+  private AppResultsReceiver mReceiver;
+  private ProgressBar mProgress;
+	
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    mProgress = (ProgressBar) findViewById(R.id.progressBar); 
+  }
+	
+  @Override
+  protected void onResume() {
+    super.onResume();
+    mReceiver = new AppResultsReceiver(new Handler());
+    mReceiver.setReceiver(this);
+  }
+	
+  @Override
+  protected void onPause() {
+    super.onPause();
+    mReceiver.setReceiver(null);
+  }
+
+  public void onStartButtonClick(View anchor) {
+    final Intent intent = new Intent("SOME_COMMAND_ACTION", null, this, AppService.class);
+    intent.putExtra(Constants.RECEIVER, mReceiver);
+    startService(intent);
+  }
+
+  @Override
+  public void onReceiveResult(int resultCode, Bundle data) {
+    switch (resultCode) {
+      case Constants.STATUS_RUNNING :
+        mProgress.setVisibility(View.VISIBLE);
+        break;
+      case Constants.STATUS_FINISHED :
+        mProgress.setVisibility(View.INVISIBLE);
+        Toast.makeText(this, "Service finished with data: " 
+          + data.getString(Constants.RECEIVER_DATA), Toast.LENGTH_SHORT).show();
+        break;
+    }
+  }
+}
+</pre>
+Здесь все просто. Activity реализует интерфейс <code>AppResultsReceiver.Receiver</code>. При старте создает экземпляр ресивера, при паузе - отвязывается от прослушивания ответов от сервиса. При клике на кнопку формируется команда (интент), в него помещается ссылка на наш <code>ResultReceiver</code> и стартуется сервис.
+При получении ответа от сервиса в методе <code>onReceiveResult()</code> проверяется код ответа и выполняется соответствующее действие. Вот и все.
+
+Демо-приложение выглядит просто, оно имеет всего одну кнопку "Послать запрос".
+<img src="app/imgs/blog/result-receiver-demo-1.png"/><img src="app/imgs/blog/result-receiver-demo-2.png" />
+<br/>
+<br/>
+Исходный код демо-проекта <a href="https://github.com/gshockv/result-receiver-demo">доступен на GitHub</a>
+
+<h4>Вместо заключения</h4>
+
+Обработка команды в фоновом сервисе реализована до безобразия просто: поток просто ставится на паузу на некоторое время. Конечно же в реальных приложениях нужно в интенте передавать код команды (action), которую нужно выполнить, дополнительные параметры и прочее. ООП вам в руки. Также стоит помнить, что данные (например, модели), которые будучи упакованными в бандл должны быть Parcelable-объектами. Это повысит эффективность их сериализации.
+Конечно же описанный подход не есть истина в последней инстанции. Мы вольны выбирать разные архитектурные подходы, средства и комбинации. Будь то AsyncTask'и, Service+Thread+BroadcastReceiver или "ручная" передача Message'ей посредством Handler'а в UI-поток. Выбирать, как говориться, вам. Но это уже совсем другая история.
