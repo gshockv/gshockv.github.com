@@ -35,8 +35,8 @@ public class AppResultsReceiver extends ResultReceiver {
   @Override
   protected void onReceiveResult(int resultCode, Bundle resultData) {
     if (mReceiver != null) {
-	  mReceiver.onReceiveResult(resultCode, resultData);
-	}
+      mReceiver.onReceiveResult(resultCode, resultData);
+    }
   }
 }
 </pre>
@@ -56,11 +56,11 @@ public class AppService extends IntentService {
   @Override
   protected void onHandleIntent(Intent intent) {
     final ResultReceiver receiver = intent.getParcelableExtra(Constants.RECEIVER);
-	receiver.send(Constants.STATUS_RUNNING, Bundle.EMPTY);
-	final Bundle data = new Bundle();
+    receiver.send(Constants.STATUS_RUNNING, Bundle.EMPTY);
+    final Bundle data = new Bundle();
 		
     try {
-	  Thread.sleep(Constants.SERVICE_DELAY);
+      Thread.sleep(Constants.SERVICE_DELAY);
       data.putString(Constants.RECEIVER_DATA, "Sample result data");
     } catch (InterruptedException e) {
       data.putString(Constants.RECEIVER_DATA, "Error");
