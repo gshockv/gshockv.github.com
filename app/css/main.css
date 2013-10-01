@@ -72,6 +72,10 @@ body {
   padding-right: 48px;
 }
 
+.promo-desc p {
+  font-size: 12pt;
+}
+
 .promo-desc .title {
   color: #0099cc;
 }
