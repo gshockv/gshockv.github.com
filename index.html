@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
         <meta name="description" content="vitaly gashock personal website"/>
         
-        <title>gshockv.github.io</title>
+        <title>Vitaly Gashock - Android Developer</title>
 
         <link rel="stylesheet" href="app/css/bootstrap.min.css">
         <link rel="stylesheet" href="app/css/main.css">
@@ -18,10 +18,14 @@
                     <li ng-class="{active: routeIs('/')}"><a href="#/">Главная</a></li>
                     <li ng-class="{active: routeIs('/projects')}"><a href="#/projects">Мои Проекты</a></li>
                 </ul>
-                <h3 class="text-muted">gshockv.github.io</h3>
+                <h3 class="text-muted">Vitaly Gashock</h3>
             </div>
 
             <ng-view></ng-view>
+            
+            <footer class="footer">
+                <p><a href="https://github.com/gshockv" target="_blank">gshockv</a> &copy; 2016 GShockv.github.io</p>
+            </footer>
         </div>
 
         <script type="text/javascript" src="app/lib/angular.min.js"></script>

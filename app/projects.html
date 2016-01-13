@@ -1,3 +1,63 @@
-<div class="jumbotron" ng-controller="ProjectsController">
-	<h3>Страница со списком проектов</h3>
+<div ng-controller="ProjectsController">
+    
+    <h3 class="text-muted">Commercial Projects</h3>
+    <ul>
+        <li>
+            <a href="https://play.google.com/store/apps/details?id=ru.mamba.client" target="_blank">Mamba</a>
+        </li>
+        <li>
+            <a href="https://play.google.com/store/apps/details?id=com.videomedicine" target="_blank">VideoMedicine</a>
+        </li>
+        <li>
+            <a href="http://www.experika.com/" target="_blank">Experika</a>
+        </li>
+    </ul>
+    
+    <br/>
+	<h3 class="text-muted">Android Pet-projects</h3> 
+    
+    <!-- AndroCoins -->
+    <div class="jumbotron">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="app/imgs/androcoins/today-nexus-5x-cropped.png" width="269px" height="289px"/>
+			</div>
+			<div class="col-md-8 promo-desc">
+				<h3 class="title">AndroCoins Android App</h3>
+				<hr class="promo-hr"/>
+				<p>Простое приложение, с помощью которого можно записывать свои карманные расходы. И учитывать.
+                    <a href="https://github.com/gshockv/androcoins" target="_blank">Исходный код открыт</a>
+                </p>
+				
+				<div class="promo-buttons">
+					<a href="https://play.google.com/store/apps/details?id=org.androcoins" target="_blank">
+	  					<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/ru_generic_rgb_wo_45.png" />
+					</a>
+					<a href="#/projects/androcoins"><button type="button" class="btn">Немного больше деталей</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <!-- Kt Search Repos -->
+    <div class="jumbotron">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="app/imgs/kt-search-repos/kt-repos-n5-cropped.png" width="269px" height="247px" />
+			</div>
+			<div class="col-md-8 promo-desc">
+				<h3 class="title">KtSearchRepos Android App</h3>
+				<hr class="promo-hr"/>
+				<p>Простое приложение, разработанное полностью на <a href="https://kotlinlang.org/" target="_blank">Kotlin</a>. Ищет репозитории
+                на GitHub по заданному ключевому слову.
+                    <a href="https://github.com/gshockv/kt-search-repos" target="_blank">Исходный код открыт</a>
+                </p>
+				
+				<div class="promo-buttons">
+					<a href="#/projects/kt-search-repos"><button type="button" class="btn">Немного больше деталей</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
 </div>
