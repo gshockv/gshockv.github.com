@@ -11,5 +11,9 @@ webSiteApp.config(function($routeProvider) {
 		when('/projects', {
 			controller: 'ProjectsController',
 			templateUrl: 'app/projects.html'
-		});
+		})
+        .when('/projects/:projectName', {
+            controller: 'ProjectDetailsController',
+            templateUrl: 'app/project-details.html'
+        });
 });
